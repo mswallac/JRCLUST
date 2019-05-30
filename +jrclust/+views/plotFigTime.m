@@ -36,11 +36,11 @@ function hFigTime = plotFigTime(hFigTime, hClust, hCfg, selected, maxAmp, iSite)
         figTitle = sprintf('Clu%d (black); %s', selected(1), figTitle);
     end
 
-    vppLim = [0, abs(maxAmp)];
 
     hFigTime.updatePlot('background', bgTimes, bgFeatures);
     hFigTime.updatePlot('foreground', fgTimes, fgFeatures);
     hFigTime.updatePlot('foreground2', fgTimes2, fgFeatures2);
+    vppLim = get(gca,'YLim');
     imrectSetPosition(hFigTime, 'hRect', timeLimits, vppLim);
 
 %     if isfield(S_fig, 'vhAx_track')
